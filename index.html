@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Karly, Quieres ser mi Valentín? ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            max-width: 90%;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .story {
+            background: #fff3f3;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .images {
+            margin: 20px 0;
+        }
+        .images img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 5px;
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>¿Karly, quieres ser mi Valentín? ❤️</h1>
+        <div class="story">
+            <p>Érase una vez un chico que encontró a la persona más especial del mundo. Desde el primer día, supo que había algo mágico en ella. Juntos crearon recuerdos hermosos, rieron hasta que doliera la panza (igual comieron mucho) y soñaron con aventuras sin fin. Ahora, en este día especial, él tiene una pregunta muy importante…</p>
+        </div>
+        <div class="images">
+            <img src="tu_foto1.jpg" alt="Foto juntos 1">
+            <img src="tu_foto2.jpg" alt="Foto juntos 2">
+            <img src="tulipan.jpg" alt="Imagen bonita">
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="respuesta()">¡Sí, obvio! 😍</button>
+        </div>
+        <p id="respuesta" class="hidden"></p>
+    </div>
+    <script>
+        function respuesta() {
+            let mensaje = document.getElementById("respuesta");
+            mensaje.innerHTML = "Sabía que dirías que sí 💖 ¡Ahora a celebrar juntos! 🎉";
+            mensaje.classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
