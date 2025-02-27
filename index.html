@@ -1,113 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Hola Karly, Quieres ser mi Valentín? ❤️</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #ffe6e6;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-            margin: 0;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-            max-width: 90%;
-            width: 90%;
-        }
-        h1 {
-            color: #ff4d4d;
-            font-size: 24px;
-            margin-top: 10px;
-        }
-        .story {
-            background: #fff3f3;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        .images {
-            margin: 20px 0;
-            position: relative;
-            width: 150px;
-            height: 150px;
-        }
-        .images img {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            margin: 5px;
-            background-color: #ff4d4d;
-            color: white;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Hola Karly, Quieres ser mi Valentín? ❤️</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #ffe6e6;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      max-width: 90%;
+      width: 90%;
+    }
+    h1 {
+      color: #ff4d4d;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    .story {
+      background: #fff3f3;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .images {
+      margin: 20px 0;
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+    .images img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 5px;
+      background-color: #ff4d4d;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+    @media print {
+      body {
+        background-color: white;
+      }
+      .card {
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+      .images img {
+        opacity: 1 !important;
+        position: static;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        border-radius: 10px;
+      }
+      .buttons {
+        display: none;
+      }
+      .hidden {
+        display: block !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <h1>¿Hola Karly, Quieres ser mi Valentín? ❤️</h1>
-        <div class="story">
-            <p>Érase una vez un chico que encontró a la persona más especial del mundo. Desde el primer día, supo que había algo mágico en ella. Juntos están creando recuerdos hermosos, rien hasta que les duele la panza y sueñan con aventuras sin fin. Ahora, en este día especial, él tiene una pregunta muy importante…</p>
-        </div>
-        <div class="images">
-            <img src="tu_foto1.jpg" alt="Foto juntos 1">
-            <img src="tu_foto2.jpg" alt="Foto juntos 2">
-            <img src="tulipan.jpg" alt="tulipan">
-        </div>
-        <div class="story">
-            <p>Quieres ser mi Valentín?</p>
-        </div>
-        <div class="buttons">
-            <button class="btn" onclick="respuesta()">¡Sí, obvio! 😍</button>
-        </div>
-        <p id="respuesta" class="hidden"></p>
+  <div class="card">
+    <h1>¿Hola Karly, Quieres ser mi Valentín? ❤️</h1>
+    <div class="story">
+      <p>Érase una vez un chico que encontró a la persona más especial del mundo. Desde el primer día, supo que había algo mágico en ella. Juntos están creando recuerdos hermosos, ríen hasta que les duele la panza y sueñan con aventuras sin fin. Ahora, en este día especial, él tiene una pregunta muy importante…</p>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let images = document.querySelectorAll(".images img");
-            let index = 0;
-            function showNextImage() {
-                images.forEach((img, i) => {
-                    img.style.opacity = i === index ? "1" : "0";
-                });
-                index = (index + 1) % images.length;
-                setTimeout(showNextImage, 2000); // Cambia cada 2 segundos
-            }
-            showNextImage();
+    <div class="images">
+      <img src="tu_foto1.jpg" alt="Foto juntos 1">
+      <img src="tu_foto2.jpg" alt="Foto juntos 2">
+      <img src="tulipan.jpg" alt="tulipan">
+    </div>
+    <div class="story">
+      <p>¿Quieres ser mi Valentín?</p>
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="respuesta()">¡Sí, obvio! 😍</button>
+    </div>
+    <p id="respuesta" class="hidden"></p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let images = document.querySelectorAll(".images img");
+      let index = 0;
+      function showNextImage() {
+        images.forEach((img, i) => {
+          img.style.opacity = i === index ? "1" : "0";
         });
+        index = (index + 1) % images.length;
+        setTimeout(showNextImage, 2000); // Cambia cada 2 segundos
+      }
+      showNextImage();
+    });
 
-        function respuesta() {
-            let mensaje = document.getElementById("respuesta");
-            mensaje.innerHTML = "Sabía que dirías que sí 💖 ¡Ahora a celebrar juntos! 🎉";
-            mensaje.classList.remove("hidden");
-        }
-    </script>
+    function respuesta() {
+      let mensaje = document.getElementById("respuesta");
+      mensaje.innerHTML = "Sabía que dirías que sí 💖 ¡Ahora a celebrar juntos! 🎉";
+      mensaje.classList.remove("hidden");
+    }
+    
+    window.onbeforeprint = function() {
+      let mensaje = document.getElementById("respuesta");
+      if (!mensaje.innerHTML.trim()) {
+        mensaje.innerHTML = "Sabía que dirías que sí 💖 ¡Ahora a celebrar juntos! 🎉";
+      }
+      mensaje.classList.remove("hidden");
+    };
+  </script>
 </body>
 </html>
